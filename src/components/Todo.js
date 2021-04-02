@@ -63,6 +63,7 @@ export default function Todo({ todo, setTodos }) {
       className={`todoContainer ${todo.completed ? 'completed' : ''} ${
         editing ? 'editing' : ''
       }`}
+      onClick={setComplete}
     >
       {editing ? (
         <>
@@ -81,7 +82,7 @@ export default function Todo({ todo, setTodos }) {
         </>
       ) : (
         <>
-          <p onClick={setComplete}>
+          <p>
             {todo.completed ? <strike>{todo.content}</strike> : todo.content}
           </p>
           <button onClick={selectEdit}>
