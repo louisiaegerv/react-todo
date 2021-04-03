@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 
 import { FiEdit, FiSave } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri'
@@ -63,7 +63,6 @@ export default function Todo({ todo, setTodos }) {
       className={`todoContainer ${todo.completed ? 'completed' : ''} ${
         editing ? 'editing' : ''
       }`}
-      onClick={setComplete}
     >
       {editing ? (
         <>
@@ -82,7 +81,7 @@ export default function Todo({ todo, setTodos }) {
         </>
       ) : (
         <>
-          <p>
+          <p onClick={setComplete} className='todoText'>
             {todo.completed ? <strike>{todo.content}</strike> : todo.content}
           </p>
           <button onClick={selectEdit}>

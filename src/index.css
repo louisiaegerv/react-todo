@@ -36,6 +36,10 @@ button:focus {
   opacity: 0.5;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 input {
   background: none;
   border: none;
@@ -168,4 +172,8 @@ input {
 
 .todoContainer.completed {
   opacity: 0.4;
+}
+
+.todoText:hover {
+  cursor: pointer;
 }
